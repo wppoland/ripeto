@@ -104,8 +104,9 @@ Ripeto does not connect to any external services. It only re-adds items to the s
 
 == Screenshots ==
 
-1. The "Order again" button on the My Account orders list.
-2. Settings page: button text, order statuses, and redirect target.
+1. Order again button next to a past order in My Account > Orders.
+2. Settings under WooCommerce > Reorder: button text, destination and order statuses.
+3. The reorder button on a phone.
 
 == Translations ==
 
