@@ -142,11 +142,15 @@ final class ReorderService implements HasHooks
             }
 
             // Variation attributes (e.g. size/colour) so the right variation is re-added.
+            // Same test and attribute_ key WooCommerce's own "Order again" uses: the cart
+            // ignores any other key, so an "Any" attribute was reported missing.
             $variations = [];
             foreach ($item->get_meta_data() as $meta) {
                 $data = $meta->get_data();
-                if (is_string($data['key']) && str_starts_with($data['key'], 'pa_')) {
-                    $variations[$data['key']] = $data['value'];
+                if (is_string($data['key'])
+                    && (taxonomy_is_product_attribute($data['key']) || meta_is_product_attribute($data['key'], $data['value'], $productId))
+                ) {
+                    $variations['attribute_' . sanitize_title($data['key'])] = $data['value'];
                 }
             }
 

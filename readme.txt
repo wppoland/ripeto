@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,9 @@ Ripeto does not connect to any external services. It only re-adds items to the s
 Ripeto is fully translatable and ships the `ripeto.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.6 =
+* Fixed: reordering a variation whose size, colour or other option was set to "Any" now puts the item back in the cart with the option the customer chose. It used to be skipped as no longer available.
 
 = 1.1.5 =
 * Fixed: deleting the plugin on a multisite network now removes its settings from every site, not only the main one.
